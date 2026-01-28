@@ -2,6 +2,10 @@
 
 Aplicación web en Flutter para buscar, visualizar y descargar pictogramas de [ARASAAC](https://arasaac.org), el portal aragonés de Comunicación Aumentativa y Alternativa.
 
+## 🌐 Demo en vivo
+
+La aplicación está desplegada automáticamente en GitHub Pages: [https://pablomgrela.github.io/arasaac/](https://pablomgrela.github.io/arasaac/)
+
 ## Características
 
 - 🔍 **Búsqueda de pictogramas**: Busca pictogramas por palabras clave en español
@@ -45,6 +49,16 @@ flutter build web
 ```
 
 Los archivos compilados estarán en la carpeta `build/web/`
+
+## 🚀 Despliegue en GitHub Pages
+
+La aplicación se despliega automáticamente en GitHub Pages mediante GitHub Actions. Cada vez que se hace push a la rama `main`, se ejecuta el workflow que:
+
+1. Compila la aplicación Flutter para web
+2. Sube los archivos compilados a GitHub Pages
+3. La aplicación queda disponible en: [https://pablomgrela.github.io/arasaac/](https://pablomgrela.github.io/arasaac/)
+
+El workflow de despliegue se encuentra en `.github/workflows/deploy.yml`.
 
 ## Estructura del proyecto
 
