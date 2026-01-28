@@ -130,8 +130,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 _buildNavItem(
                   icon: Icons.favorite,
                   label: 'Favoritos',
-                  isSelected: _selectedIndex == 2,
-                  onTap: () => _onItemTapped(2),
+                  isSelected: _selectedIndex == 1,
+                  onTap: () => _onItemTapped(1),
                 ),
               ],
             ),
