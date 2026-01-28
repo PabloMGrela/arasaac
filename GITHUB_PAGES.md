@@ -22,23 +22,29 @@ Para que el despliegue funcione, necesitas **habilitar GitHub Pages** en tu repo
 
 ### Pasos a seguir:
 
-1. **Ve a tu repositorio en GitHub**
+1. **Fusiona el Pull Request**
+   - Primero, fusiona este PR en la rama `main`
+   - Esto añadirá el workflow de GitHub Actions al repositorio
+
+2. **Ve a tu repositorio en GitHub**
    - https://github.com/PabloMGrela/arasaac
 
-2. **Accede a Settings (Configuración)**
+3. **Accede a Settings (Configuración)**
    - Haz clic en la pestaña "Settings" en la parte superior
 
-3. **Configura GitHub Pages**
+4. **Configura GitHub Pages**
    - En el menú lateral izquierdo, busca y haz clic en "Pages"
    - En la sección "Build and deployment":
      - **Source**: Selecciona "GitHub Actions"
    - Guarda los cambios
 
-4. **Fusiona el Pull Request**
-   - Una vez configurado GitHub Pages, fusiona el PR en la rama `main`
-   - El workflow se ejecutará automáticamente
+5. **Ejecuta el workflow manualmente (opcional)**
+   - Ve a la pestaña "Actions"
+   - Selecciona "Deploy Flutter Web to GitHub Pages"
+   - Haz clic en "Run workflow" y selecciona la rama `main`
+   - O simplemente espera al próximo push a `main` para que se ejecute automáticamente
 
-5. **Espera el despliegue**
+6. **Espera el despliegue**
    - El workflow tardará unos minutos en ejecutarse
    - Puedes ver el progreso en la pestaña "Actions" del repositorio
    - Una vez completado, tu aplicación estará disponible en:
