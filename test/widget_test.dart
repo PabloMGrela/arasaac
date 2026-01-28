@@ -11,20 +11,31 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:arasaac_pictogramas/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Navigation between search and favorites screens', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
+    await tester.pumpAndSettle();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Verify that we start on the search screen
+    expect(find.text('Buscar'), findsWidgets);
+    
+    // Find and tap the favorites button
+    final favoritesButton = find.widgetWithText(InkWell, 'Favoritos');
+    expect(favoritesButton, findsOneWidget);
+    
+    await tester.tap(favoritesButton);
+    await tester.pumpAndSettle();
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Verify that we navigated to the favorites screen
+    expect(find.text('Favoritos'), findsWidgets);
+    expect(find.text('Tus pictogramas guardados'), findsOneWidget);
+    
+    // Tap back to search
+    final searchButton = find.widgetWithText(InkWell, 'Buscar');
+    await tester.tap(searchButton);
+    await tester.pumpAndSettle();
+    
+    // Verify we're back on search screen
+    expect(find.text('Buscar'), findsWidgets);
   });
 }
